@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 // Import routes
 const authRoute = require("./routes/auth");
+const postRoute = require("./routes/post");
 
 dotenv.config();
 
@@ -19,5 +20,6 @@ app.use(express.json());
 
 //Route Middlewares
 app.use("/api/user", authRoute);
+app.use("/api/post", postRoute);
 
 app.listen(3000, () => console.log("Hello World!"));
